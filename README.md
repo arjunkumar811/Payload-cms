@@ -1,4 +1,126 @@
 
+# Payload CMS + Next.js Starter
+
+This is a full-stack starter template that integrates Payload CMS (backend) with a Next.js (frontend) application. Perfect for building custom content-driven web apps using modern tools like TypeScript, MongoDB, and React.
+
+---
+
+##  Project Structure
+
+```
+my-project/
+├── cms/              ← Payload CMS (backend)
+│   ├── payload.config.ts
+│   ├── collections/
+│   └── ...
+├── frontend/         ← Next.js frontend
+│   ├── pages/
+│   ├── components/
+│   └── ...
+├── .env
+└── README.md
+```
+
+---
+
+##  Quick Start
+
+### 1. Clone the Repo & Install Dependencies
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd my-project
+```
+
+Install CMS dependencies:
+
+```bash
+cd cms
+npm install
+```
+
+Install Frontend dependencies:
+
+```bash
+cd ../frontend
+npm install
+```
+
+---
+
+### 2. Setup Environment
+
+In the root of the project, create a `.env` file:
+
+```
+MONGODB_URI=your_mongodb_connection_string
+PAYLOAD_SECRET=your_secure_random_string
+```
+
+You can get MongoDB free at https://cloud.mongodb.com.
+
+---
+
+### 3. Run Locally
+
+Start CMS (backend):
+
+```bash
+cd cms
+npm run dev
+```
+
+Start Next.js (frontend):
+
+```bash
+cd ../frontend
+npm run dev
+```
+
+Access:
+- Payload Admin Panel → http://localhost:3000/admin
+- Frontend Site → http://localhost:3001 (or whichever port you set)
+
+---
+
+## Fetching Data from Payload in Next.js
+
+Example to fetch blog posts from Payload:
+
+```tsx
+useEffect(() => {
+  fetch('http://localhost:3000/api/posts')
+    .then(res => res.json())
+    .then(data => setPosts(data.docs));
+}, []);
+```
+
+---
+
+## Features
+
+- ✅ Modern Payload CMS backend
+- ✅ Custom collections (e.g., Posts)
+- ✅ MongoDB database integration
+- ✅ Next.js frontend rendering
+- ✅ REST API or GraphQL support
+- ✅ Fully typed with TypeScript
+
+---
+
+## 🛠 Tech Stack
+
+- Payload CMS
+- Next.js
+- React
+- MongoDB
+- TypeScript
+- Node.js
+
+
+
+
+
 # CMS Integration Strategy – Payload CMS
 
 > Powering a dynamic multi-tenant frontend using Payload CMS APIs.
